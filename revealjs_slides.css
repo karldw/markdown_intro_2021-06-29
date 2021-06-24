@@ -1,0 +1,19 @@
+
+/* Allow multiple columns (https://stackoverflow.com/a/44392145) */
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+
+/* Left-align slide content (https://github.com/hakimel/reveal.js/issues/1897) */
+.reveal p {
+    text-align: left;
+}
+.reveal ul {
+    display: block;
+}
+.reveal ol {
+    display: block;
+}
