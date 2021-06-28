@@ -74,10 +74,11 @@ output:
 - Headings
 - Items
 - Enumerations
+- Emphasis
+- Math
 - Code
 - Links
 - Images
-- Math
 
 # Headings
 
@@ -224,7 +225,45 @@ Caveats:
 1. The [list of supported commands](https://docs.mathjax.org/en/latest/input/tex/macros/index.html) is very long, but it's not a LaTeX substitute
 
 
+# Code (inline)
 
+- Inline code with single backticks:
+    - In: \`y = x1 + x2\`
+    - Out: `y = x1 + x2`
+
+# Code (blocks)
+- Code blocks with triple backticks
+    - Optionally add language syntax highlighting (e.g. `r`)
+
+<!-- Note: there are zero-width spaces in the second set of ``` -->
+```
+`​`​`r
+
+x = lm(mpg ~ wt + cyl, data=mtcars)
+broom::tidy(x)
+#> # A tibble: 3 x 5
+#>   term        estimate std.error statistic  p.value
+#>   <chr>          <dbl>     <dbl>     <dbl>    <dbl>
+#> 1 (Intercept)    39.7      1.71      23.1  3.04e-20
+#> 2 wt             -3.19     0.757     -4.22 2.22e- 4
+#> 3 cyl            -1.51     0.415     -3.64 1.06e- 3
+
+`​`​`
+```
+
+
+```r
+
+x = lm(mpg ~ wt + cyl, data=mtcars)
+broom::tidy(x)
+#> # A tibble: 3 x 5
+#>   term        estimate std.error statistic  p.value
+#>   <chr>          <dbl>     <dbl>     <dbl>    <dbl>
+#> 1 (Intercept)    39.7      1.71      23.1  3.04e-20
+#> 2 wt             -3.19     0.757     -4.22 2.22e- 4
+#> 3 cyl            -1.51     0.415     -3.64 1.06e- 3
+
+```
 
 # Comments and Escapes
 
@@ -262,12 +301,14 @@ And are the same as HTML comments
     - In: `[Last section](#/comments-and-escapes)`
     - Out: [Last section](#/comments-and-escapes)
 
-# Links to images
+# Images
 - Images are almost identical, but with `!` before `[`
     - In: `![penguin logo](palmerpenguins_logo.png)`
     - Out:
 
 ![penguin logo](palmerpenguins_logo.png)
+
+
 
 # Tables
 
@@ -297,7 +338,30 @@ And are the same as HTML comments
 ::::
 :::
 
+# Tables
 
+```r
+x = lm(mpg ~ wt + cyl, data=mtcars)
+y = broom::tidy(x)
+knitr::kable(y)
+
+#> |term        |  estimate| std.error| statistic|   p.value|
+#> |:-----------|---------:|---------:|---------:|---------:|
+#> |(Intercept) | 39.686262| 1.7149840| 23.140893| 0.0000000|
+#> |wt          | -3.190972| 0.7569065| -4.215808| 0.0002220|
+#> |cyl         | -1.507795| 0.4146883| -3.635972| 0.0010643|
+```
+
+
+<center>&#8595;</center>
+
+
+
+| term        |  estimate | std.error | statistic |   p.value |
+|:------------|----------:|----------:|----------:|----------:|
+| (Intercept) | 39.686262 | 1.7149840 | 23.140893 | 0.0000000 |
+| wt          | -3.190972 | 0.7569065 | -4.215808 | 0.0002220 |
+| cyl         | -1.507795 | 0.4146883 | -3.635972 | 0.0010643 |
 
 
 

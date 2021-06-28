@@ -3,11 +3,16 @@
 
 June 29, 2021
 
+## [PDF slides here](markdown_talk.pdf)
+
+
+
+
 ## Sources
 
 - Markdown syntax ([basic](https://www.markdownguide.org/basic-syntax) and [extended](https://www.markdownguide.org/extended-syntax))
 - [R Markdown](https://rmarkdown.rstudio.com/)
-- [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins0
+- [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins0)
 - [HedgeDoc](https://hedgedoc.org/)
 
 
@@ -25,7 +30,7 @@ The basic version is just `Rscript -e "rmarkdown::render('markdown_talk.md')"`
 
 But you can watch for changes with `inotifywait`:
 ```sh
-while inotifywait -e modify markdown_talk.md; do 
+while inotifywait -e modify markdown_talk.md; do
     Rscript -e "rmarkdown::render('markdown_talk.md')"
 done
 ```
@@ -48,11 +53,8 @@ rmdir tmp
 ```
 
 Run decktape.
-It has no idea when each HTML page is done loading or rendering, so you have to set pauses. 
+It has no idea when each HTML page is done loading or rendering, so you have to set pauses.
 (The default `--pause` of 1000ms is longer than necessary, but the default `--load-pause` of 0ms isn't long enough. Here I make both 500ms.)
 ```
 podman run --rm -it -v .:/slides decktape --size 1920x1080 --pause 500 --load-pause 500 reveal markdown_talk.html markdown_talk.pdf
 ```
-
-
-
