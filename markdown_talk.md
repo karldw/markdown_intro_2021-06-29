@@ -2,7 +2,7 @@
 ---
 title: "Intro to Markdown"
 author: "[Karl Dunkle Werner](https://karldw.org)"
-date: "June 29, 2021<br><br>Slides: https://github.com/karldw/markdown_intro_2021-06-29"
+date: "June 29, 2021<br><br>Slides:<br>[github.com/karldw/markdown_intro_2021-06-29](github.com/karldw/markdown_intro_2021-06-29)"
 output:
   revealjs::revealjs_presentation:
     transition: none
@@ -27,7 +27,7 @@ output:
 - #econ_prosem is a great service
 
 
-# What?
+# What is Markdown?
 
 - Plain text
     - ([Which is a very good thing!](https://plain-text.co/))
@@ -238,7 +238,6 @@ Caveats:
 <!-- Note: there are zero-width spaces in the second set of ``` -->
 ```
 `​`​`r
-
 x = lm(mpg ~ wt + cyl, data=mtcars)
 broom::tidy(x)
 #> # A tibble: 3 x 5
@@ -247,13 +246,11 @@ broom::tidy(x)
 #> 1 (Intercept)    39.7      1.71      23.1  3.04e-20
 #> 2 wt             -3.19     0.757     -4.22 2.22e- 4
 #> 3 cyl            -1.51     0.415     -3.64 1.06e- 3
-
 `​`​`
 ```
 
 
 ```r
-
 x = lm(mpg ~ wt + cyl, data=mtcars)
 broom::tidy(x)
 #> # A tibble: 3 x 5
@@ -262,7 +259,6 @@ broom::tidy(x)
 #> 1 (Intercept)    39.7      1.71      23.1  3.04e-20
 #> 2 wt             -3.19     0.757     -4.22 2.22e- 4
 #> 3 cyl            -1.51     0.415     -3.64 1.06e- 3
-
 ```
 
 # Comments and Escapes
