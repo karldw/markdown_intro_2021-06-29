@@ -10,6 +10,7 @@ output:
     slide_level: 1
     css: revealjs_slides.css
     mathjax: default
+    self_contained: false
     pandoc_args:
        - "--filter"
        - "pandoc-citeproc"
