@@ -12,7 +12,7 @@ June 29, 2021
 
 - Markdown syntax ([basic](https://www.markdownguide.org/basic-syntax) and [extended](https://www.markdownguide.org/extended-syntax))
 - [R Markdown](https://rmarkdown.rstudio.com/)
-- [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins0)
+- [Palmer Penguins](https://github.com/allisonhorst/palmerpenguins)
 - [HedgeDoc](https://hedgedoc.org/)
 
 

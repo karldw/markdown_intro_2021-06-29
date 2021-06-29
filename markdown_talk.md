@@ -30,7 +30,7 @@ output:
 # What is Markdown?
 
 - Plain text
-    - ([Which is a very good thing!](https://plain-text.co/))
+    - Which is a good thing! <small>(See [The Plain Person’s Guide to Plain Text Social Science](https://plain-text.co/))</small>
 - Readable by itself
 - That gets converted into HTML
 
@@ -64,12 +64,7 @@ output:
     - Github
     - Today: [Hedgedoc](https://hedgedoc.org/)
 
-# Syntax Details
-
-- https://www.markdownguide.org/basic-syntax
-- https://www.markdownguide.org/extended-syntax
-
-# Basics
+# Syntax Basics
 
 - Headings
 - Items
@@ -391,37 +386,90 @@ knitr::kable(y)
 ::: {#refs}
 :::
 
-<!--
-Notes:
-
-- Tables are easy-ish to read, but a pain to write
-    - Tools like R Markdown will do it for you
--
-
-
--->
-
 # [R Markdown](https://rmarkdown.rstudio.com/)
 
 - Combines code and text
 - Never have to copy updated tables, figures, or numbers into your text
 - Works with Markdown or LaTeX
+- Use Knitr to covert `.Rmd` to `.md`
+    - Older tool: Sweave
+- Use Pandoc to convert `.md` to anything
 
 ![R markdown flow](rmarkdownflow.png)
 
-# What does R Markdown [output](https://github.com/allisonhorst/palmerpenguins) look like?
+# What does R Markdown look like?
 
-![palmerpenguins README screenshot rendered](palmerpenguins_rmd1.png)
+<center>
+[![penguin logo](palmerpenguins_logo.png)](https://github.com/allisonhorst/palmerpenguins)
+</center>
 
-# What does R Markdown &#8594; [Markdown](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/README.md) look like?
+# What does [R Markdown](https://github.com/allisonhorst/palmerpenguins) look like?
 
-![palmerpenguins README screenshot markdown file](palmerpenguins_rmd2.png)
+::: {.container}
+:::: {.col}
+[![palmerpenguins README screenshot rendered](palmerpenguins_rmd1.png)](https://github.com/allisonhorst/palmerpenguins/blob/master/README.md)
 
-# What does the original [R Markdown](https://github.com/allisonhorst/palmerpenguins/blob/master/README.Rmd) look like?
+::::
+&#8594;
+<!-- right arrow -->
 
-![palmerpenguins README screenshot R markdown file](palmerpenguins_rmd3.png)
+:::: {.col}
+[![palmerpenguins README screenshot R markdown file](palmerpenguins_rmd2.png)](https://github.com/allisonhorst/palmerpenguins/blob/master/README.Rmd)
 
+::::
+:::
+
+
+# Zooming in
+
+[![palmerpenguins README screenshot rendered](palmerpenguins_rmd1.png)](https://github.com/allisonhorst/palmerpenguins/blob/master/README.md)
+
+
+# Zooming in
+[![palmerpenguins README screenshot R markdown file](palmerpenguins_rmd2.png)](https://github.com/allisonhorst/palmerpenguins/blob/master/README.Rmd)
+
+# R markdown code blocks
+
+- Almost identical to markdown code blocks
+- Start with ` ```{r …} ` instead of ` ``` ` or ` ```r `
+- Optionally add chunk name and [options](https://yihui.org/knitr/options/):
+
+
+```
+{r mass-flipper, warning = FALSE, message = FALSE,
+    echo = FALSE, out.width='75%', fig.retina=2}
+```
 
 # Questions?
 
-- Let's try it out in Hedgedoc (link in the chat)
+- Let's try out markdown in Hedgedoc (link in the chat)
+
+
+# Links
+
+::: {.container}
+:::: {.col}
+
+**Markdown**
+
+- [Basic syntax](https://www.markdownguide.org/basic-syntax)
+- [Extended syntax](https://www.markdownguide.org/extended-syntax)
+- [Github-flavored markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown)
+- [Mathjax](https://www.mathjax.org/)
+
+::::
+:::: {.col}
+
+**R Markdown**
+
+
+
+
+- [RStudio's markdown guide](https://rmarkdown.rstudio.com/)
+- [Knitr](https://yihui.org/knitr/)
+    - Not just R
+    - Not just markdown
+- [Pandoc](https://pandoc.org/)
+    - [Citeproc](https://github.com/jgm/citeproc)
+::::
+:::
